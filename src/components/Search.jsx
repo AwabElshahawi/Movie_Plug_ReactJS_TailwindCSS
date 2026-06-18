@@ -9,7 +9,7 @@ const Search = ({searchterm,setSearchterm}) => {
 
         <input
         type='text'
-        placeholder='Seacrh for your favourite movies!'
+        placeholder='Search for your favourite movies!'
         value={searchterm}
         onChange={(event) => setSearchterm(event.target.value)}
         />

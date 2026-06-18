@@ -1,30 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
 @import "tailwindcss";
 
 @theme {
     
-    --color-primary: #020f2e;
+    --color-primary: #0C1531;
     
-    --color-light-100: #749dfc;
-    --color-light-200: #5f8df8;
-    --font-bitcount-grid-double: "Bitcount Grid Double", monospace;
+    --color-light-100: #244094;
+    --color-light-200: #3A5FCF;
 
+    --color-dark-100: #040710;
+    --font-bitcount-grid-double: "Bitcount Grid Double", monospace;
+    --font-sn-pro: "SN Pro";
     --breakpoint-xs: 480px;
   
 }
 
 @layer base {
     bodY{
-        
-        background: #020f2e;
+        font-family: "SN Pro";
+        background: #0C1531;
     }
     
     h1{
         font-family: "Bitcount Grid Double";
-        @apply text-6xl text-center my-5 text-white
+        @apply text-6xl text-center my-5 text-white 
     }
     
+    h2 {
+        @apply text-white text-3xl italic font-bold
+    }
     main {
         @apply min-h-screen relative bg-primary;
     }
@@ -39,6 +45,9 @@
 }
 
 @layer components {
+    .wrapper {
+        @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
+    }
 
     .search {
         @apply w-full bg-light-100/5 px-4 py-3 rounded-lg mt-10 max-w-3xl mx-auto;
@@ -49,6 +58,30 @@
 
         & input {
             @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
+        }
+    }
+    
+    .movie-list {
+        @apply my-10 mx-5;
+         
+        & ul {
+        @apply grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-amber-50;
+        }
+    }
+
+    .error {
+        @apply text-2xl text-red-500;
+    }
+
+    .movie-card {
+        @apply bg-dark-100 p-15 rounded-2xl shadow-inner shadow-light-100/10 ;
+         
+        & img {
+            @apply rounded-lg h-auto w-full;
+        }
+
+        & h3 {
+            @apply text-white font-bold text-base line-clamp-1;
         }
     }
 }
