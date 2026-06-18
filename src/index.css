@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+    
+    --color-primary: #020f2e;
+    
+    --color-light-100: #749dfc;
+    --color-light-200: #5f8df8;
+    --font-bitcount-grid-double: "Bitcount Grid Double", monospace;
+
+    --breakpoint-xs: 480px;
+  
+}
+
+@layer base {
+    bodY{
+        
+        background: #020f2e;
+    }
+    
+    h1{
+        font-family: "Bitcount Grid Double";
+        @apply text-6xl text-center my-5 text-white
+    }
+    
+    main {
+        @apply min-h-screen relative bg-primary;
+    }
+
+    header {
+        @apply sm:mt-10 mt-5;
+    }
+    
+    header img {
+        @apply w-full max-w-lg h-auto object-contain mx-auto drop-shadow-md;
+    }
+}
+
+@layer components {
+
+    .search {
+        @apply w-full bg-light-100/5 px-4 py-3 rounded-lg mt-10 max-w-3xl mx-auto;
+        
+        & div {
+            @apply relative flex items-center;
+        }
+
+        & input {
+            @apply w-full bg-transparent py-2 sm:pr-10 pl-10 text-base text-gray-200 placeholder-light-200 outline-hidden;
+        }
+    }
+}
+    
+    @utility text-gradient {
+        @apply bg-linear-to-r from-[#c7cfff] to-[#5f91ff] bg-clip-text text-transparent
+    }
