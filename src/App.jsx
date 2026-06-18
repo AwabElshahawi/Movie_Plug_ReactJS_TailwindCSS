@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Search from "./components/search";
+import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
 import heroimg from "./assets/hero.png";
