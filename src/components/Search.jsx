@@ -1,10 +1,11 @@
 import React from 'react'
+import searchLogo from '../assets/search.svg'
 
 const Search = ({searchterm,setSearchterm}) => {
   return (
     <div  className='search'>
       <div>
-        <img src='search.svg' alt='search'>
+        <img src={searchLogo} alt='search'>
         </img>
 
         <input

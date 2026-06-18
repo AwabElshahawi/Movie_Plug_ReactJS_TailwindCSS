@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Search from "./components/search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
+import heroimg from "./assets/hero.png";
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
@@ -57,7 +58,7 @@ const  App = () => {
     <main>
       <div className="warpper">
         <header>
-          <img src="./hero.png" alt="Hero Banner"/> 
+          <img src={heroimg} alt="Hero Banner"/> 
           <h1> Find <span className="text-gradient"> Movies </span> You Like!</h1>
         </header>
         <Search searchterm={searchterm} setSearchterm={setSearchterm}/>
