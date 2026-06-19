@@ -5,22 +5,23 @@
 
 @theme {
     
-    --color-primary: #0C1531;
+    --color-primary: #040710;
     
     --color-light-100: #244094;
     --color-light-200: #3A5FCF;
 
-    --color-dark-100: #040710;
+    --color-dark-100: #0C1531;
     --font-bitcount-grid-double: "Bitcount Grid Double", monospace;
     --font-sn-pro: "SN Pro";
     --breakpoint-xs: 480px;
   
 }
 
+
 @layer base {
     bodY{
         font-family: "SN Pro";
-        background: #0C1531;
+        background: #040710;
     }
     
     h1{
@@ -29,7 +30,7 @@
     }
     
     h2 {
-        @apply text-white text-3xl italic font-bold
+        @apply text-white text-3xl italic font-bold mb-6
     }
     main {
         @apply min-h-screen relative bg-primary;
@@ -62,7 +63,7 @@
     }
     
     .movie-list {
-        @apply my-10 mx-5;
+        @apply my-10 mx-50; 
          
         & ul {
         @apply grid grid-cols-1 gap-5 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-amber-50;
@@ -74,7 +75,7 @@
     }
 
     .movie-card {
-        @apply bg-dark-100 p-15 rounded-2xl shadow-inner shadow-light-100/10 ;
+        @apply bg-dark-100 p-10 rounded-2xl shadow-inner shadow-light-100/10 ;
          
         & img {
             @apply rounded-lg h-auto w-full;
@@ -83,9 +84,53 @@
         & h3 {
             @apply text-white font-bold text-base line-clamp-1;
         }
+        & .content {
+            @apply flex-wrap mt-4 flex ;
+            
+        }
+        & .content img {
+            @apply size-6 object-contain;
+        }
+        & .rating {
+            @apply flex flex-row items-center gap-1;
+        }
+
+        & .rating p {
+            @apply text-base text-white font-bold;
+        }
+        
+        & .rating img {
+            @apply size-5 object-contain;
+        }   
     }
+    
+    .trending {
+    @apply mt-20 mx-50;
+
+    & ul {
+      @apply flex flex-row overflow-y-auto gap-5 -mt-10 w-full;
+    }
+
+    & ul li {
+      @apply min-w-[230px] flex flex-row items-center;
+    }
+
+    & ul li p {
+      @apply fancy-text mt-[22px] text-nowrap;
+    }
+
+    & ul li img {
+      @apply w-[127px] h-[163px] rounded-lg object-cover -ml-3.5;
+    }
+  }
 }
     
-    @utility text-gradient {
-        @apply bg-linear-to-r from-[#c7cfff] to-[#5f91ff] bg-clip-text text-transparent
-    }
+@utility text-gradient {
+    @apply bg-linear-to-r from-[#c7cfff] to-[#5f91ff] bg-clip-text text-transparent
+}
+
+@utility fancy-text {
+-webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
+font-size: 190px;
+font-family: "Bebas Neue", sans-serif;
+}
